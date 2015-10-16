@@ -38,4 +38,9 @@ public class CalculatorTest {
     public void testDifferentDelimeter() {
     	assertEquals(3, Calculator.add("//;\n1;2"));
     }
+
+    @Test (expected = RuntimeException.class)
+    public void testNegativeNumber() {
+    	Calculator.add("-1,2");
+    }
 }
