@@ -26,8 +26,22 @@ public class Calculator {
 	    	int delIndex = numbers.indexOf("//") + 2;
 	    	delimeter = delimeter + "|" + numbers.substring(delIndex, delIndex + 1);
 	    	numbers = numbers.substring(delIndex + 2);
+	    	
 	    	return numbers.split(delimeter);
-	    } else 
+	    } 
+	    /*else if(numbers.startsWith("//[")) {
+	    	String del = " ";
+
+	    	for(int i = 0; i < numbers.length(); i++) {
+	    		if(numbers.charAt(i) != ']') {
+	    			del += numbers.substring(i, i + i);
+	    		}
+	    	}
+	    	numbers = numbers.replaceAll(del, ",");
+
+	    	return numbers.split(numbers);
+	    } */
+	    else 
 			return numbers.split(delimeter);
 	}
       
@@ -50,7 +64,6 @@ public class Calculator {
         	if(toInt(number) > 1000) {
         		continue;
         	}
-        	
         	total += toInt(number);
 		}
 		return total;
